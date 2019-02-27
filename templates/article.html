@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block banner %}
+<div class="breadcumb-area black-opacity bg-img-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="breadcumb-wrap">
+                            <h2>{{article.title}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcumb-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul>
+                                <li><a href="/index">Home</a></li>
+                                <li>/</li>
+                                <li>{{article.title}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+{% block content %}
+<section class="blog-details-area ptb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-xs-12">
+                        <div class="blog-details-wrap">
+                            <div class="blog-details-img">
+
+                                <img src="{{MEDIA_URL}}{{article.title_pic}}" alt="">
+                                <!--<img src="/static/assets/images/blog/blog-details.jpg" alt="">-->
+                            </div>
+                            <div class="blog-details-content">
+                                <p>{% autoescape off %}{{article.content}}{% endautoescape %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 col">
+                        <aside class="right-sidebar">
+                            <div class="search-sidebar mb-30">
+                                <form action="#">
+                                    <input type="text" name="search" placeholder="Search Here">
+                                    <button type="button" name="button"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                            <div class="category-wrap mb-30">
+                                <h3 class="sidebar-title">Category</h3>
+                                <ul>
+                                    <li><a href="#">Investments</a></li>
+                                    <li><a href="#">Budgets</a></li>
+                                    <li><a href="#">Accounting</a></li>
+                                    <li><a href="#">Portfolios</a></li>
+                                    <li><a href="#">Wealth</a></li>
+                                    <li><a href="#">Business</a></li>
+                                    <li><a href="#">Corporate</a></li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
