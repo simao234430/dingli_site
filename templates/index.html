@@ -17,7 +17,8 @@
 {% endblock %}
 
 {% block content %}
-<section class="blog-area ptb-140 bg-1">
+<!--blog-area-->
+<section class="service-area ptb-140 bg-1">
     <div class="container">
         <div class="row">
             {% for article in list %}
@@ -168,50 +169,52 @@
 <section class="team-area team-area2 team-area3 ptb-30">
             <div class="container">
                 <div class="row">
+            {% for item  in Leader_list %}
                     <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s;">
                         <div class="team-wrap3 mb-30">
                             <div class="team-img">
-                                <img src="static/assets/images/team/team2/1.jpg" alt="">
+                                <img src="/media/{{item.photo}}" alt="">
                             </div>
                             <div class="team-content">
-                                <h3>院  长: 张雪鹏</h3>
-                                <p>硕士 经济分析师</p>
+                                <h3>{{item.name}}</h3>
+                                <p>{{item.title}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3  col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s;">
-                        <div class="team-wrap3 mb-30">
-                            <div class="team-img">
-                                <img src="static/assets/images/team/team2/2.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h3>Connor Charles</h3>
-                                <p>Founder</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3  col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s;">
-                        <div class="team-wrap3 mb-30">
-                            <div class="team-img">
-                                <img src="static/assets/images/team/team2/3.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h3>Robert Kyle</h3>
-                                <p>Sales Head</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s;">
-                        <div class="team-wrap3 mb-30">
-                            <div class="team-img">
-                                <img src="static/assets/images/team/team2/4.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h3>Brayden Shar</h3>
-                                <p>The Boss</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="col-md-3  col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s;">-->
+                        <!--<div class="team-wrap3 mb-30">-->
+                            <!--<div class="team-img">-->
+                                <!--<img src="static/assets/images/team/team2/2.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="team-content">-->
+                                <!--<h3>Connor Charles</h3>-->
+                                <!--<p>Founder</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3  col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s;">-->
+                        <!--<div class="team-wrap3 mb-30">-->
+                            <!--<div class="team-img">-->
+                                <!--<img src="static/assets/images/team/team2/3.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="team-content">-->
+                                <!--<h3>Robert Kyle</h3>-->
+                                <!--<p>Sales Head</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s;">-->
+                        <!--<div class="team-wrap3 mb-30">-->
+                            <!--<div class="team-img">-->
+                                <!--<img src="static/assets/images/team/team2/4.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="team-content">-->
+                                <!--<h3>Brayden Shar</h3>-->
+                                <!--<p>The Boss</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+            {% endfor %}
                 </div>
             </div>
         </section>
