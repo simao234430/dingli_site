@@ -10,11 +10,21 @@ from ..models import TeacherInfo,TeacherCategory,ArticleCategory,Article
 category_map = {
     "hot":"新闻热点",
     "all": "新闻中心",
+    "party":"党团工作",
+    "international": "国际化教育",
+    "job": "就业工作",
+    "student": "学生管理",
+    "enrol": "招生工作"
 }
 
 show_category_map = {
     "hot":"新闻热点",
     "all": "新闻中心",
+    "party": "党团工作",
+    "international": "国际化教育",
+    "job": "就业工作",
+    "student": "学生管理",
+    "enrol": "招生工作"
 }
 
 def index(request,category):
