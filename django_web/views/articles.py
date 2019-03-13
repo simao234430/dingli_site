@@ -36,7 +36,7 @@ def index(request,category):
     if temp == None:
         return render(request, '404.html')
     else:
-        if category_map.get(category) == '新闻中心' or category_map.get(category) == '党团工作' \
+        if category_map.get(category) == '党团工作' \
                 or category_map.get(category) == '就业工作' or category_map.get(category) == '学生成长' \
                 or category_map.get(category) == '招生工作' or category_map.get(category) == '国际化教育' \
                 or category_map.get(category) == '热点新闻':
@@ -56,10 +56,21 @@ def index(request,category):
 
             return render(request, 'articles.html', {'Articles': Articles, 'category': show_categor})
         else:
-            list = ArticleCategory.objects.get(category=category_map.get(category, None)).article.all()
-            for e in list:
-                print (e.id)
-            return render(request, 'articles.html', {'list': list,'category': show_categor})
+            Article_list = Article.objects.all().order_by('-publish_date')
+            paginator = Paginator(Article_list, 6)  # Show 25 contacts per page
+
+            page = request.GET.get('page',1)
+            try:
+                Articles = paginator.page(page)
+            except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+                Articles = paginator.page(1)
+            except EmptyPage:
+                # If page is out of range (e.g. 9999), deliver last page of results.
+                Articles = paginator.page(paginator.num_pages)
+            # for e in Article_list:
+            #     print (e.id)
+            return render(request, 'articles.html', {'Articles': Article_list,'category': show_categor})
     # teacher.id = teacher.id + 1
     # teacher.save()
 
