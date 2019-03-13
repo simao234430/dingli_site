@@ -70,7 +70,7 @@ def index(request,category):
                 Articles = paginator.page(paginator.num_pages)
             # for e in Article_list:
             #     print (e.id)
-            return render(request, 'articles.html', {'Articles': Article_list,'category': show_categor})
+            return render(request, 'articles.html', {'Articles': Articles,'category': show_categor})
     # teacher.id = teacher.id + 1
     # teacher.save()
 
