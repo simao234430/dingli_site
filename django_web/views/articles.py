@@ -40,7 +40,8 @@ def index(request,category):
                 or category_map.get(category) == '就业工作' or category_map.get(category) == '学生管理' \
                 or category_map.get(category) == '招生工作' or category_map.get(category) == '国际化教育' \
                 or category_map.get(category) == '热点新闻':
-            Article_list = Article.objects.all()
+            # Article_list = Article.objects.all()
+            Article_list = ArticleCategory.objects.get(category=category_map.get(category, None)).article.all()
             paginator = Paginator(Article_list, 6)  # Show 25 contacts per page
 
             page = request.GET.get('page',1)
