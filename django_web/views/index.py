@@ -10,7 +10,7 @@ def index(request):
     # list = ["a", "b", "c", "d"]
     # for i in list:
     #     print i
-    Article_list = Article.objects.all()[:3]
+    Article_list = Article.objects.all().order_by('-publish_date')[:3]
     Leader_list = TeacherCategory.objects.get(category='领导').teacher.all().order_by('-range_weight')[:4]
 
     for i in Leader_list:

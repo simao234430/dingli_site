@@ -13,7 +13,7 @@ category_map = {
     "party":"党团工作",
     "international": "国际化教育",
     "job": "就业工作",
-    "student": "学生管理",
+    "student": "学生成长",
     "enroll": "招生工作"
 }
 
@@ -23,7 +23,7 @@ show_category_map = {
     "party": "党团工作",
     "international": "国际化教育",
     "job": "就业工作",
-    "student": "学生管理",
+    "student": "学生成长",
     "enroll": "招生工作"
 }
 
@@ -37,7 +37,7 @@ def index(request,category):
         return render(request, '404.html')
     else:
         if category_map.get(category) == '新闻中心' or category_map.get(category) == '党团工作' \
-                or category_map.get(category) == '就业工作' or category_map.get(category) == '学生管理' \
+                or category_map.get(category) == '就业工作' or category_map.get(category) == '学生成长' \
                 or category_map.get(category) == '招生工作' or category_map.get(category) == '国际化教育' \
                 or category_map.get(category) == '热点新闻':
             # Article_list = Article.objects.all()
