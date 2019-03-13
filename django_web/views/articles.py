@@ -8,23 +8,23 @@ from django.core.paginator import Paginator
 from ..models import TeacherInfo,TeacherCategory,ArticleCategory,Article
 # Create your views here.
 category_map = {
-    "hot":"新闻热点",
+    "hot":"热点新闻",
     "all": "新闻中心",
     "party":"党团工作",
     "international": "国际化教育",
     "job": "就业工作",
     "student": "学生管理",
-    "enrol": "招生工作"
+    "enroll": "招生工作"
 }
 
 show_category_map = {
-    "hot":"新闻热点",
+    "hot":"热点新闻",
     "all": "新闻中心",
     "party": "党团工作",
     "international": "国际化教育",
     "job": "就业工作",
     "student": "学生管理",
-    "enrol": "招生工作"
+    "enroll": "招生工作"
 }
 
 def index(request,category):
@@ -36,7 +36,10 @@ def index(request,category):
     if temp == None:
         return render(request, '404.html')
     else:
-        if category_map.get(category) == '新闻中心':
+        if category_map.get(category) == '新闻中心' or category_map.get(category) == '党团工作' \
+                or category_map.get(category) == '就业工作' or category_map.get(category) == '学生管理' \
+                or category_map.get(category) == '招生工作' or category_map.get(category) == '国际化教育' \
+                or category_map.get(category) == '热点新闻':
             Article_list = Article.objects.all()
             paginator = Paginator(Article_list, 6)  # Show 25 contacts per page
 
