@@ -5,8 +5,12 @@ import datetime
 # Create your views here.
 
 
-def index(request):
+def index(request,category):
     context = {}
-
-    return render(request, "lab.html", context)
-    # return render(request, 'index.html', context)
+    url_map = {
+        "1": 'menu4_1.html',
+        "2": 'menu4_2.html',
+        "3": 'menu4_3.html',
+        "4": 'menu4_4.html'
+    }
+    return render(request, url_map.get(category,"404.html"), context)

@@ -64,7 +64,7 @@ class Article(models.Model):
     content = RichTextUploadingField('正文')
     title = models.CharField(u'标题',max_length=64,default="")
     title_pic = models.ImageField(u'头部图片', upload_to='uploadImages',default="")
-    publish_date = models.DateTimeField(blank=True, auto_now_add = True, )#default=datetime.now(),
+    publish_date = models.DateTimeField(u'发布日期',blank=True, auto_now_add = False, )#default=datetime.now(),
     publish_person = models.CharField(max_length=64,default="")
     introduction = models.CharField(max_length=128, default="")
     photoby = models.CharField(max_length=64,default="")

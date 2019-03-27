@@ -18,7 +18,7 @@ def index(request):
     return render(request, 'index.html', {'list': Article_list,'Leader_list': Leader_list})
 
 def test(request):
-    return render_to_response('enroll.html')
+    return render_to_response('articlesnew.html')
 
 def enroll(request):
     return render_to_response('enroll.html')
