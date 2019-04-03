@@ -16,6 +16,7 @@ class TeacherInfo(models.Model):
         ('leader', '领导'),
         ('teacher', '老师'),
         ('instructor', '辅导员'),
+        ('export', '专家团队'),
     )
     id = models.IntegerField(primary_key=True)
     name = models.CharField(u'姓名',max_length=16)

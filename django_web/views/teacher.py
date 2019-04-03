@@ -10,7 +10,8 @@ category_map = {
     "leader":"领导",
     "instructor":"辅导员",
     "party":"党员",
-    "administration":"行政团队"
+    "administration":"行政团队",
+    "export": "专家团队"
 }
 
 show_category_map = {
@@ -18,7 +19,8 @@ show_category_map = {
     "leader":"领导",
     "instructor":"辅导员",
     "party":"党员",
-    "administration":"行政团队"
+    "administration":"行政团队",
+    "export":"专家团队"
 }
 
 def index(request,category):
